@@ -86,7 +86,7 @@ export default {
     pushRouter (to) {
       if (to === '/music') {
         let url = `${window.location.protocol}//${window.location.hostname}`
-        if (['80', '443'].indexOf(window.location.port) === -1) url += `:${window.location.port}`
+        if (window.location.port !== '') url += `:${window.location.port}`
         window.location.href = url + to
       } else {
         this.$router.push(to)
